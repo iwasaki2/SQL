@@ -1,0 +1,18 @@
+部活名、部長名、顧問、部員数、を抽出するためのSELECT文　「Cl」
+
+CREATE VIEW Club2 AS
+SELECT Name, Captain, Adviser, Members
+FROM Club;
+
+
+CREATE VIEW TotalBudget AS
+SELECT Type, SUM(Budget) AS TotalBudget
+FROM Club
+GROUP BY Type;
+
+
+SELECT Type, TotalBudget
+FROM TotalBudget
+WHERE Type = '1';
+
+
